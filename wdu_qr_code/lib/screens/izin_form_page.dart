@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import '../widgets/app_drawer.dart'; // Hapus import ini
 import '../widgets/bottom_nav_bar.dart';
+import '../utils/page_transition.dart';
 
 class IzinFormPage extends StatefulWidget {
   @override
@@ -95,16 +95,16 @@ class _IzinFormPageState extends State<IzinFormPage> with SingleTickerProviderSt
     
     switch (index) {
       case 1: // Form Cuti
-        Navigator.pushReplacementNamed(context, '/cuti');
+        navigateWithAnimation(context, '/cuti');
         break;
       case 2: // Scan QR
-        Navigator.pushReplacementNamed(context, '/home');
+        navigateWithAnimation(context, '/home');
         break;
       case 3: // Form Lembur
-        Navigator.pushReplacementNamed(context, '/lembur');
+        navigateWithAnimation(context, '/lembur');
         break;
       case 4: // Profil (bisa diganti dengan halaman profil jika ada)
-        // Navigator.pushReplacementNamed(context, '/profile');
+        // navigateWithAnimation(context, '/profile');
         break;
     }
   }

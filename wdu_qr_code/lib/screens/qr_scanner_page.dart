@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../utils/user_data.dart';
-// import '../widgets/app_drawer.dart'; // Hapus import ini
+// import '../widgets/app_drawer.dart';
 import '../widgets/bottom_nav_bar.dart';
+import '../utils/page_transition.dart';
 
 class QRScannerPage extends StatefulWidget {
   @override
@@ -45,16 +46,16 @@ class _QRScannerPageState extends State<QRScannerPage> with SingleTickerProvider
     
     switch (index) {
       case 0: // Form Izin
-        Navigator.pushReplacementNamed(context, '/izin');
+        navigateWithAnimation(context, '/izin');
         break;
       case 1: // Form Cuti
-        Navigator.pushReplacementNamed(context, '/cuti');
+        navigateWithAnimation(context, '/cuti');
         break;
       case 3: // Form Lembur
-        Navigator.pushReplacementNamed(context, '/lembur');
+        navigateWithAnimation(context, '/lembur');
         break;
       case 4: // Profil (bisa diganti dengan halaman profil jika ada)
-        // Navigator.pushReplacementNamed(context, '/profile');
+        // navigateWithAnimation(context, '/profile');
         break;
     }
   }
@@ -143,7 +144,7 @@ class _QRScannerPageState extends State<QRScannerPage> with SingleTickerProvider
           ),
         ],
       ),
-      // Hapus drawer: AppDrawer(),
+      
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -192,7 +193,7 @@ class _QRScannerPageState extends State<QRScannerPage> with SingleTickerProvider
                           }
                         },
                       ),
-                        // Scanner corners with animated gradient border
+                        
                         Positioned.fill(
                           child: Container(
                             padding: EdgeInsets.all(16),

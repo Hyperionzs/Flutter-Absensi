@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import '../widgets/app_drawer.dart'; // Hapus import ini
 import '../widgets/bottom_nav_bar.dart';
+import '../utils/page_transition.dart';
 
 class CutiFormPage extends StatefulWidget {
   @override
@@ -157,16 +158,16 @@ class _CutiFormPageState extends State<CutiFormPage> with SingleTickerProviderSt
     
     switch (index) {
       case 0: // Form Izin
-        Navigator.pushReplacementNamed(context, '/izin');
+        navigateWithAnimation(context, '/izin');
         break;
       case 2: // Scan QR
-        Navigator.pushReplacementNamed(context, '/home');
+        navigateWithAnimation(context, '/home');
         break;
       case 3: // Form Lembur
-        Navigator.pushReplacementNamed(context, '/lembur');
+        navigateWithAnimation(context, '/lembur');
         break;
       case 4: // Profil (bisa diganti dengan halaman profil jika ada)
-        // Navigator.pushReplacementNamed(context, '/profile');
+        // navigateWithAnimation(context, '/profile');
         break;
     }
   }

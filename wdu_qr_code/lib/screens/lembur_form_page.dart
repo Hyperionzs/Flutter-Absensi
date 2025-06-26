@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import '../widgets/app_drawer.dart'; // Hapus import ini
 import '../widgets/bottom_nav_bar.dart';
+import '../utils/page_transition.dart';
 
 class LemburFormPage extends StatefulWidget {
   @override
@@ -153,16 +153,16 @@ class _LemburFormPageState extends State<LemburFormPage> with SingleTickerProvid
     
     switch (index) {
       case 0: // Form Izin
-        Navigator.pushReplacementNamed(context, '/izin');
+        navigateWithAnimation(context, '/izin');
         break;
       case 1: // Form Cuti
-        Navigator.pushReplacementNamed(context, '/cuti');
+        navigateWithAnimation(context, '/cuti');
         break;
       case 2: // Scan QR
-        Navigator.pushReplacementNamed(context, '/home');
+        navigateWithAnimation(context, '/home');
         break;
       case 4: // Profil (bisa diganti dengan halaman profil jika ada)
-        // Navigator.pushReplacementNamed(context, '/profile');
+        // navigateWithAnimation(context, '/profile');
         break;
     }
   }
@@ -184,7 +184,7 @@ class _LemburFormPageState extends State<LemburFormPage> with SingleTickerProvid
         elevation: 0,
         backgroundColor: Colors.blue.shade600,
       ),
-      // Hapus drawer: AppDrawer(),
+      
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

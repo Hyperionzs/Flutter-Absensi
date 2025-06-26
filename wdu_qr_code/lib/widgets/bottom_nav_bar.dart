@@ -26,16 +26,16 @@ class BottomNavBar extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.event_note),
-            label: 'Form Izin',
+            label: 'Izin',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today),
-            label: 'Form Cuti',
+            label: 'Cuti',
           ),
           BottomNavigationBarItem(
             icon: Container(
-              height: 56,
-              width: 56,
+              height: 50,
+              width: 50,
               decoration: BoxDecoration(
                 color: Colors.blue.shade600,
                 shape: BoxShape.circle,
@@ -50,14 +50,14 @@ class BottomNavBar extends StatelessWidget {
               child: Icon(
                 Icons.qr_code_scanner,
                 color: Colors.white,
-                size: 28,
+                size: 24,
               ),
             ),
-            label: 'Scan QR',
+            label: 'Scan',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.access_time),
-            label: 'Form Lembur',
+            label: 'Lembur',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -71,6 +71,10 @@ class BottomNavBar extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         onTap: onTap,
+        // Menambahkan properti untuk mengatasi overflow
+        selectedFontSize: 12,
+        unselectedFontSize: 10,
+        iconSize: 24,
       ),
     );
   }
